@@ -11,13 +11,13 @@ from .__about__ import __version__
 config = {
     "unique": {
         "SECRET_KEY": "{{ 24|random_string }}",
+        "ENFORCE_APPARMOR": False,
     },
     "defaults": {
         "VERSION": __version__,
         "APPARMOR_DOCKER_IMAGE": "docker.io/ednxops/codejail_apparmor_loader:latest",
         "DOCKER_IMAGE": f"docker.io/ednxops/codejailservice:{__version__}",
         "ENABLE_K8S_DAEMONSET": False,
-        "ENFORCE_APPARMOR": False,
         "HOST": "codejailservice",
         "SANDBOX_PYTHON_VERSION": "3.8.6",
         "SKIP_INIT": False,
